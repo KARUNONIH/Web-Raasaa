@@ -53,8 +53,12 @@
 									<dl>
 										@foreach ($menu as $menu)
       									@if ($menu->types->getAttribute('filters_id') == '2')
-										<dt><a href="#" class="rm-viewdetails" data-thumb="{{ asset('storage/' . $menu->gambar) }}" data-harga="{{ $menu->harga }}" data-kategori="{{ $menu->types->nama }}">{{ $menu->nama }}</a></dt>
-										<dd>{{ $menu->deskripsi }}</dd>
+											@if ($menu->availabilities->getAttribute('id') == '1')
+												<dt><a href="#" class="rm-viewdetails" data-thumb="{{ asset('storage/' . $menu->gambar) }}" data-harga="{{ $menu->harga }}" data-kategori="{{ $menu->types->nama }}" data-tidak="" data-overlay="">{{ $menu->nama }}</a></dt>
+											@else
+												<dt><a href="#" class="rm-viewdetails-not" data-thumb="{{ asset('storage/' . $menu->gambar) }}" data-harga="{{ $menu->harga }}" data-kategori="{{ $menu->types->nama }}" data-tidak="Menu Sedang Tidak Tersedia" data-overlay="overlay">{{ $menu->nama }}</a></dt>
+											@endif
+											<dd>{{ $menu->deskripsi }}</dd>
 										@endif
 										@endforeach
 									</dl>
@@ -72,8 +76,12 @@
 									<dl>
 										@foreach ($menu1 as $menu)
       									@if ($menu->types->getAttribute('filters_id') == '1')
-										<dt><a href="#" class="rm-viewdetails" data-thumb="{{ asset('storage/' . $menu->gambar) }}" data-harga="{{ $menu->harga }}" data-kategori="{{ $menu->types->nama }}">{{ $menu->nama }}</a></dt>
-										<dd>{{ $menu->deskripsi }}</dd>
+										  	@if ($menu->availabilities->getAttribute('id') == '1')
+												<dt><a href="#" class="rm-viewdetails" data-thumb="{{ asset('storage/' . $menu->gambar) }}" data-harga="{{ $menu->harga }}" data-kategori="{{ $menu->types->nama }}" data-tidak="" data-overlay="">{{ $menu->nama }}</a></dt>
+											@else
+												<dt><a href="#" class="rm-viewdetails-not" data-thumb="{{ asset('storage/' . $menu->gambar) }}" data-harga="{{ $menu->harga }}" data-kategori="{{ $menu->types->nama }}" data-tidak="Menu Sedang Tidak Tersedia" data-overlay="overlay">{{ $menu->nama }}</a></dt>
+											@endif
+											<dd>{{ $menu->deskripsi }}</dd>
 										@endif
 										@endforeach
 									</dl>
@@ -92,15 +100,21 @@
 								<span class="rm-close">Close</span>
 								<div class="rm-content" id="right">
 									<h4>Desserts</h4>
+									<dl>
 										@foreach ($menu2 as $menu)
       									@if ($menu->types->getAttribute('filters_id') == '3')
-										<dt><a href="#" class="rm-viewdetails" data-thumb="{{ asset('storage/' . $menu->gambar) }}" data-harga="{{ $menu->harga }}" data-kategori="{{ $menu->types->nama }}">{{ $menu->nama }}</a></dt>
-										<dd style="margin-left: 0px">{{ $menu->deskripsi }}</dd>
+										  	@if ($menu->availabilities->getAttribute('id') == '1')
+												<dt><a href="#" class="rm-viewdetails" data-thumb="{{ asset('storage/' . $menu->gambar) }}" data-harga="{{ $menu->harga }}" data-kategori="{{ $menu->types->nama }}" data-tidak="" data-overlay="">{{ $menu->nama }}</a></dt>
+											@else
+												<dt><a href="#" class="rm-viewdetails-not" data-thumb="{{ asset('storage/' . $menu->gambar) }}" data-harga="{{ $menu->harga }}" data-kategori="{{ $menu->types->nama }}" data-tidak="Menu Sedang Tidak Tersedia" data-overlay="overlay">{{ $menu->nama }}</a></dt>
+											@endif
+											<dd>{{ $menu->deskripsi }}</dd>
 										@endif
 										@endforeach
 									{{-- <div class="rm-order">
 										<p><strong>Would you like us to cater your event?</strong> Call us &amp; we'll help you find a venue and organize the event: <strong>626.511.1170</strong></p>
 									</div> --}}
+									</dl>
 								</div><!-- /rm-content -->
 							</div><!-- /rm-back -->
 

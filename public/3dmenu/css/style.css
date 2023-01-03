@@ -193,7 +193,6 @@
 
 .rm-content {
     padding: 5px;
-    
 }
 
 .rm-logo,
@@ -268,8 +267,8 @@ a.rm-button-open:hover {
 
 .rm-content dl {
     margin: 0;
-    max-height:575px;
-    overflow:auto;
+    max-height: 575px;
+    overflow: auto;
 }
 
 .rm-content dl dt,
@@ -291,8 +290,8 @@ a.rm-button-open:hover {
     font-weight: 400;
 }
 
-.rm-content dl{
-    padding: 0
+.rm-content dl {
+    padding: 0;
 }
 
 .rm-order p {
@@ -351,6 +350,30 @@ a.rm-viewdetails:before {
     font-weight: 500;
 }
 
+.rm-modal .overlay {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+}
+
+.rm-modal h2 {
+    color: #e6b741;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    font-family: "Lora", serif;
+}
+
 .rm-modal .rm-thumb {
     width: 100px;
     height: 100px;
@@ -374,6 +397,12 @@ a.rm-viewdetails:before {
 a.rm-viewdetails,
 .rm-modal a {
     color: #e6b741;
+    font-weight: 500;
+}
+
+a.rm-viewdetails-not,
+.rm-modal a {
+    color: #565656;
     font-weight: 500;
 }
 
